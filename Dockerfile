@@ -21,6 +21,8 @@ RUN chmod ug+x /startup/* && \
 		nmap \
 		nmap-nselibs \
 		nmap-scripts \
+		openssh \
+		gcc \
 		git && \
 	mkdir -p $RTD_HOME && \
 	wget --quiet https://github.com/rtfd/readthedocs.org/archive/${RTD_VERSION}.zip -O readthedocs.org-${RTD_VERSION}.zip && \
