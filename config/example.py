@@ -22,7 +22,7 @@ class CommunityExampleSettings(CommunityBaseSettings):
     ALLOW_PRIVATE_REPOS = True
 
     ADMINS = (
-        ('YourName Here', 'your.name@example.com')
+        ('Tom Durrant', 't.durrant@metocean.co.nz')
     )
 
 

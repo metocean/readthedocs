@@ -11,7 +11,10 @@ services:
     networks:
       - rtd-net
   initdb:
-    image: maxirus/readthedocs:latest
+    image: readthedocs:latest
+    build:
+        context: ./
+        dockerfile: Dockerfile
     environment:
       - "RTD_CONTAINER_TYPE=initdb"
       - "ADMIN_USER_PASSWORD=admin"
@@ -79,7 +82,10 @@ services:
     networks: 
       - rtd-net
   webserver:
-    image: maxirus/readthedocs:latest
+    image: readthedocs:latest
+    build:
+        context: ./
+        dockerfile: Dockerfile
     environment:
       - "RTD_CONTAINER_TYPE=webserver"
       - "MV_SVC_PING=initdb:8000"
