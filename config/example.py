@@ -14,7 +14,7 @@ class CommunityExampleSettings(CommunityBaseSettings):
 
     ## General Config ##
     SECRET_KEY = 'mySup3rS3cr3tK3y'
-    
+
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
     TASTYPIE_FULL_DEBUG = DEBUG
@@ -25,7 +25,7 @@ class CommunityExampleSettings(CommunityBaseSettings):
         ('YourName Here', 'your.name@example.com')
     )
 
-    
+
     ## Web Server Endpoints ##
     PRODUCTION_DOMAIN = 'localhost:8000'
     WEBSOCKET_HOST = 'webserver:8088'
@@ -41,7 +41,7 @@ class CommunityExampleSettings(CommunityBaseSettings):
     BROKER_URL = 'redis://{0}:{1}/{2}'.format(REDIS['host'], REDIS['port'], REDIS['db'])
     CELERY_RESULT_BACKEND = 'redis://{0}:{1}/{2}'.format(REDIS['host'], REDIS['port'], REDIS['db'])
     CELERY_ALWAYS_EAGER = False
-    
+
 
     ## Email Settings ##
     # Use this backend to send emails to console
