@@ -36,7 +36,10 @@ services:
     networks:
       - rtd-net
   worker:
-    image: maxirus/readthedocs:latest
+    image: readthedocs:latest
+    build:
+        context: ./
+        dockerfile: Dockerfile
     environment:
       - "RTD_CONTAINER_TYPE=celery"
       - "MV_SVC_PING=initdb:8000"
@@ -47,6 +50,7 @@ services:
       - rtd-media:/opt/rtd/media
       - rtd-userbuilds:/opt/rtd/user_builds
       - rtd-webroot:/opt/rtd/public_web_root
+      - .ssh:/home/rtd/.ssh
     depends_on:
       - postgresql
       - redis
