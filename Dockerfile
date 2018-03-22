@@ -1,17 +1,13 @@
 FROM python:2.7.14-alpine3.7
 
 ENV RTD_HOME="/opt/rtd" \
-RTD_VERSION="2.1.2"
+RTD_VERSION="2.3.0"
 
 COPY includes/init /startup
 
 RUN chmod ug+x /startup/* && \
 	apk --update add --no-cache --virtual .rtd-build-deps  \
-		gcc \
 		make \
-		linux-headers \
-		libc-dev \
-		libxml2-dev \
 		py-setuptools && \
 	apk --update add --no-cache --virtual .rtd-deps \
 		bash \
@@ -23,6 +19,21 @@ RUN chmod ug+x /startup/* && \
 		nmap-scripts \
 		openssh \
 		gcc \
+		linux-headers \
+		libc-dev \
+		libxml2-dev \
+        libjpeg-turbo-dev \
+        jpeg-dev \
+        zlib-dev \
+        freetype-dev \
+        lcms2-dev \
+        openjpeg-dev \
+        tiff-dev \
+        tk-dev \
+        tcl-dev \
+        harfbuzz-dev \
+        fribidi-dev \
+        python-dev \
 		git && \
 	mkdir -p $RTD_HOME && \
 	wget --quiet https://github.com/rtfd/readthedocs.org/archive/${RTD_VERSION}.zip -O readthedocs.org-${RTD_VERSION}.zip && \
