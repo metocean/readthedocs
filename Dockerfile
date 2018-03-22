@@ -34,6 +34,7 @@ RUN chmod ug+x /startup/* && \
         harfbuzz-dev \
         fribidi-dev \
         python-dev \
+        gfortran \
 		git && \
 	mkdir -p $RTD_HOME && \
 	wget --quiet https://github.com/rtfd/readthedocs.org/archive/${RTD_VERSION}.zip -O readthedocs.org-${RTD_VERSION}.zip && \
